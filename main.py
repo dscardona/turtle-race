@@ -5,30 +5,13 @@ screen = Screen()
 screen.setup(width=500, height=400)
 user_bet = screen.textinput(title="Make your bet", prompt="Which turtle will win the race? Enter a color: ")
 colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+y_positions = [-70, -40, -10, 20, 50, 80]
 
-blue = Turtle(shape="turtle")
-blue.penup()
-blue.goto(x=-230, y=70)
-blue.color("blue")
+for turtle_index in range(0, 6):
+    cursor = Turtle(shape="turtle")
+    cursor.color(colors[turtle_index])
+    cursor.penup()
+    cursor.goto(x=-230, y=y_positions[turtle_index])
 
-green = Turtle(shape="turtle")
-green.penup()
-green.goto(x=-230, y=30)
-green.color("green")
-
-yellow = Turtle(shape="turtle")
-yellow.penup()
-yellow.goto(x=-230, y=-10)
-yellow.color("yellow")
-
-orange = Turtle(shape="turtle")
-orange.penup()
-orange.goto(x=-230, y=-50)
-orange.color("orange")
-
-red = Turtle(shape="turtle")
-red.penup()
-red.goto(x=-230, y=-90)
-red.color("red")
  
 screen.exitonclick()
